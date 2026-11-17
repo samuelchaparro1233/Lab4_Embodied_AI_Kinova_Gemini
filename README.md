@@ -109,6 +109,56 @@ ros2 topic pub --once /embodied/consulta std_msgs/msg/String \
 
 ---
 
+## 📸 Evidencia Experimental y Resultados Visuales
+
+### 1. Calibración Intrínseca y Registro Multimodal (RGB + Profundidad)
+Calibración geométrica por semejanza de triángulos sobre la cámara de muñeca Kinova Gen3 acoplada al sensor Intel RealSense D410 ($f_x = 1362.90\text{ px}$, discrepancia de $1.19\%$):
+
+| Captura RGB de Referencia | Mapa de Profundidad Infrarrojo | Grounding y Bounding Box |
+| :---: | :---: | :---: |
+| ![Regla RGB](capturas/regla_calibracion_visual.jpg) | ![Regla Profundidad](capturas/regla_depth_visual.png) | ![Regla Resultado](capturas/regla_resultado.png) |
+| *Patrón métrico de calibración* | *Profundidad D410 (GRAY16)* | *Detección y escala de píxeles* |
+
+---
+
+### 2. Razonamiento Semántico y Generalización (Exp. 1: D vs P)
+Evaluación de la brecha de sobreajuste de prompt ($41.9\%$). El modelo infiere el punto de agarre sobre el objeto meta («caja libre») y se adapta a la perturbación espacial de las entidades:
+
+| Escena de Desarrollo ($D$) | Escena de Prueba Perturbada ($P$) |
+| :---: | :---: |
+| ![Semantica 1](capturas/semantica1_resultado.png) | ![Semantica 1P](capturas/semantica1p_resultado.png) |
+| *Inferencia sobre configuración base ($x = 686$)* | *Reacción inmediata ante reubicación espacial ($x = 411$)* |
+
+---
+
+### 3. Estimación Métrica 3D y Desproyección Estenopeica (Exp. 3)
+Localización en coordenadas euclidianas tridimensionales $(X, Y, Z)$ combinando visión computacional y filtrado espacial de mediana ($5 \times 5$):
+
+| RGB con Anotación Tridimensional | Nube / Mapa de Profundidad Registrado |
+| :---: | :---: |
+| ![Distancia 1 RGB](capturas/dist1_resultado.png) | ![Distancia 1 Depth](capturas/dist1_depth.png) |
+| *Cálculo de centroide y error de localización* | *Validación de umbral de píxeles (> 65.5%)* |
+
+---
+
+### 4. Seguridad Operacional y Agarre (Exp. 5: Seguro vs Inseguro)
+Validación de la política de abstención de agarre ($100\%$ de recall en seguridad). El sistema inhibe la síntesis de poses cuando detecta interferencia humana o inestabilidad física:
+
+| Agarre Seguro (Objeto Despejado) | Agarre Inseguro (Interferencia Humana) |
+| :---: | :---: |
+| ![Agarre Seguro](capturas/agarre_s1_resultado.png) | ![Agarre Inseguro](capturas/agarre_i1_resultado.png) |
+| *Autorizado: Espacio de trabajo libre y estable* | *Rechazado: Detección de mano humana / obstáculo* |
+
+---
+
+### 5. Inferencia Multimodal en Escena de Manipulación
+| Detección y Segmentación de Objeto Manipulable |
+| :---: |
+| ![Burger Scene](capturas/burger_resultado.png) |
+| *Grounding semántico y desproyección de pose de aproximación pre-agarre* |
+
+---
+
 ## 🔒 Reglas Críticas de Seguridad y Ética
 
 1. **El Robot no se mueve**: El Kinova Gen3 permanece en pose de observación fija. Todo el código de laboratorio es pasivo (lectura de visión y razonamiento).
