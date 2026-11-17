@@ -1,0 +1,14 @@
+{
+  "escena": "semantica1",
+  "nota": "Dos cajas con termo encima",
+  "fecha": "2026-11-12T15:30:21.215408",
+  "color_res": [
+    1920,
+    1080
+  ],
+  "depth_res": [
+    480,
+    270
+  ],
+  "pct_profundidad_valida": 91.05
+}

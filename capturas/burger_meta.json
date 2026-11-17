@@ -1,0 +1,14 @@
+{
+  "escena": "burger",
+  "nota": "Caja sobre la bandeja del carrito",
+  "fecha": "2026-11-12T15:50:06.814713",
+  "color_res": [
+    1920,
+    1080
+  ],
+  "depth_res": [
+    480,
+    270
+  ],
+  "pct_profundidad_valida": 69.91
+}

@@ -1,0 +1,611 @@
+Plantilla grupal de informe y entrega — Laboratorio IA 01B
+Pruebas Gemini-Robotics: razonamiento espacial, localización 3D y agarre con Kinova Gen3
+Integra el informe técnico, los resultados experimentales, la comprobación individual y la trazabilidad de la entrega. Se diligencia un documento por grupo.
+1. Identificación y trazabilidad
+Campo
+Registro
+Programa
+Ingeniería Mecatrónica
+Asignatura
+INTELIGENCIA ARTIFICIAL
+Periodo / corte
+2026-2 / Corte 3
+Actividad
+Laboratorio IA 01B — Pruebas Gemini-Robotics con Kinova Gen3
+Número y nombre del grupo
+[G__ — nombre del equipo]
+Integrantes (código — nombre — rol)
+[código — nombre — rol][código — nombre — rol][código — nombre — rol]
+Persona designada para entregar
+[código — nombre]
+Ruta de adquisición
+[A sin ROS 2 / B con ROS 2]
+Repositorio y SHA de los TODO
+[URL] @ [SHA]
+SHA del prompt congelado
+[SHA]
+Fecha de sesión y consultas
+[AAAA-MM-DD]
+Nombre del archivo
+LAB_IA_01B_EMBODIED_GRUPO_<numero>_v1.docx
+2. Uso de la plantilla
+Reemplace todos los campos entre corchetes y no elimine los encabezados ni los nombres de las tablas.
+Genere las tablas de métricas desde resultados/resultados.csv y verdad_terreno.csv; no edite manualmente los valores.
+Adjunte los CSV, el script o notebook de métricas y las imágenes capturas/*_resultado.png.
+Identifique cada figura y conclusión con la tabla, escena o métrica que la sustenta.
+No incluya claves de API, rostros, personas ni datos identificables en archivos o imágenes.
+Diligencie además ABET-IA-2026-2-LAB-IA-01B_v1.0.docx con los localizadores E1 a E10.
+3. Preparación del informe
+3.1. Resumen
+INSTRUCCIÓN: Máximo 150 palabras: describa el procedimiento, los principales resultados cuantitativos (Accuracy en P, RMSE 3D y Recall del rechazo de agarres) y la conclusión principal.
+[Escriba aquí el resumen.]
+3.2. Hipótesis pre-registradas
+[Copie las hipótesis escritas antes de consultar el modelo, una por experimento. No las modifique después de observar los resultados.]
+3.3. Prompts utilizados
+[Copie el prompt propio congelado y la versión ingenua. Explique qué relación espacial obliga a razonar y qué cambió durante el desarrollo.]
+PROMPTS["propio"] = ...PROMPTS["ingenuo"] = ...
+3.4. Espacio de trabajo y pre-agarre
+[Incluya las funciones dentro_del_volumen y pose_pre_agarre, los límites medidos y el procedimiento usado para obtener la normal de la mesa.]
+def dentro_del_volumen(xyz, lim): ...def pose_pre_agarre(xyz, n, d_a=0.10): ...
+4. Resultados experimentales
+Tabla 1: Entorno y Autoevaluación
+Ítem
+Valor
+Ruta elegida (A sin ROS 2 / B con ROS 2)
+Versión de google-genai y de Python
+Modelo usado (gemini-robotics-er-2-preview) y fechas de las consultas
+Resultado de python3 -m pytest tests -q (passed / failed)
+SHA del commit con los TODO resueltos
+SHA del commit prompt congelado
+Tabla 2: Matriz de Pruebas (diseñada antes de consultar)
+Exp.
+Pregunta
+Factores y niveles
+Variables de respuesta
+Repeticiones mínimas
+Variables controladas
+1
+¿Razona el modelo relaciones espaciales en escenas no vistas?
+Relación (seguridad, pertenencia, estado, contención, relacional) × partición (D, P); prompt (ingenuo, propio) en burger
+Acierto, JSON válido, latencia
+3 por escena
+Modelo, thinking = low, temperatura 0.5, misma captura, pose fija
+2
+¿Qué tan exactas y estables son sus cajas?
+Escena (semantica1, burger)
+IoU, TP/FP/FN, σ de coordenadas
+5 por escena
+Mismo prompt cajas, misma captura
+3
+¿Cuánto error 3D produce el pipeline y cuánto aporta el registro?
+Configuración (5; centro/borde) × registro (sí, no)
+Error de distancia (mm)
+2 por configuración
+Misma respuesta de Gemini en ambas condiciones de registro
+4
+¿Compensa más razonamiento su costo?
+thinking_level (low, high)
+Acierto, latencia, tokens
+5 por nivel
+Escena P fija, prompt congelado, orden intercalado
+5
+¿Se abstiene el modelo ante agarres inseguros y reconoce el éxito?
+Seguridad real (segura, insegura); resultado real (bien, mal)
+Decisión del modelo, validez del plan
+3 + 3 escenas; 2 + 2 casos
+Mismo objeto objetivo y volumen de trabajo
+_(agregue)_
+Tabla 3: Registro de Escenas y Partición
+Escena
+Partición
+Fase
+Descripción
+% píxeles de profundidad válidos
+regla
+–
+3 y 9
+Hoja A4 horizontal centrada, Z = ____ m
+semantica1 / semantica1p
+D / P
+5 y 6
+Seguridad: dos cajas, un objeto encima de una
+semantica2 / semantica2p
+D / P
+5 y 8
+Pertenencia: dos celulares, llaves junto a uno
+semantica3 / semantica3p
+D / P
+5
+Estado: cuaderno abierto y cuaderno cerrado
+semantica4 / semantica4p
+D / P
+5
+Contención: esfero dentro del estuche y dos sueltos
+burger / burgerp
+D / P
+5 y 6
+Relacional: cajas y bandeja del carrito
+dist1 … dist5
+–
+7
+Dos objetos a distancia conocida (≥ 2 cerca del borde)
+agarre_s1 … agarre_s3
+–
+9
+Agarre seguro
+agarre_i1 … agarre_i3
+–
+9
+Agarre inseguro: objeto encima, mano cerca, objeto volcado
+exito_antes1/2, exito_bien1/2, exito_mal1/2
+–
+9
+Antes y después de la manipulación manual
+Tabla 4: Calibración de la Cámara de Color
+Parámetro
+Valor
+Fuente
+Resolución de color
+capturas/regla_meta.json
+f_x / f_y (px)
+Kortex API / calibración rápida
+c_x / c_y (px)
+Campo de visión horizontal (°)
+Salida de calibrar
+Distancia 3D entre esquinas de la hoja (m)
+consultar --escena regla
+Error de verificación respecto a 0.297 m (%)
+Tabla 5: Bitácora de Desarrollo del Prompt (solo escenas D)
+Iteración
+Cambio en el prompt
+Motivo (falla observada)
+Aciertos en D / 5
+JSON inválidos
+0
+Prompt inicial
+–
+1
+2
+Congelado
+SHA:
+Tabla 6: Experimento 1 — Semántica con Partición (`thinking = low`, 3 repeticiones)
+Relación
+Aciertos D / 3
+Aciertos P / 3
+JSON inválidos (D + P)
+Latencia media (s)
+Observación del error
+Seguridad
+Pertenencia
+Estado
+Contención
+Relacional (burger, prompt propio)
+Relacional (burger, prompt ingenuo)
+Accuracy global
+D:
+P:
+Brecha D − P:
+Tabla 7: Experimento 2 — Cajas Delimitadoras (5 repeticiones)
+Escena
+Objeto
+IoU medio ± σ con la verdad
+σ de coordenadas (px)
+IoU medio entre repeticiones
+TP / FP / FN (IoU ≥ 0.5)
+semantica1
+semantica1
+burger
+burger
+Global
+mIoU:
+Precision: · Recall:
+Tabla 8: Experimento 3 — Exactitud 3D y Ablación Controlada del Registro
+Config.
+Posición en la imagen
+d_real (m)
+d_est con registro (m)
+e con registro (mm)
+d_est sin registro (m)
+e sin registro (mm)
+1
+2
+3
+4
+5
+MAE / RMSE (N = 10)
+Altura de un objeto sobre la mesa: real ______ m · estimada (Z_mesa - Z_objeto) ______ m · error ______ mm.
+Tabla 9: Experimento 4 — Costo del Razonamiento (5 repeticiones por nivel)
+thinking_level
+Accuracy (/5)
+Latencia media ± σ (s)
+Decisiones por minuto
+Tokens de pensamiento (media)
+Tokens totales (media)
+¿Aceptó el nivel?
+low
+high
+minimal (opcional)
+medium (opcional)
+Tabla 10a: Experimento 5 — Matriz de Confusión del Agarre (positivo = insegura, el modelo se abstiene)
+Modelo se abstiene (lista vacía)
+Modelo devuelve punto
+Escena insegura
+TP =
+FN =
+Escena segura
+FP =
+TN =
+Precision / Recall / F1
+Tabla 10b: Espacio de Trabajo y Pre-agarre
+Escena
+Punto de agarre (X, Y, Z) (m)
+¿Dentro del volumen?
+¿Sobre el objeto correcto?
+Pose de pre-agarre p_pre (m)
+Observación
+agarre_s1
+agarre_s2
+agarre_s3
+Volumen de trabajo usado: X [____, ____] m · Y [____, ____] m · Z_mesa = ____ m · h_max = ____ m · normal n = (____, ____, ____) · d_a = ____ m.
+Tabla 10c: Plan y Detección de Éxito
+Prueba
+Resultado del modelo
+Resultado esperado
+¿Correcto?
+Comentario
+Plan: vocabulario permitido
+Solo acciones válidas
+Plan: objetivos existentes
+Todos en objetos
+Plan: puntos dentro del volumen
+Dentro de los límites
+Plan: secuencia coherente
+Orden físicamente válido
+Éxito: tarea bien hecha (2 casos)
+exito: true
+Éxito: tarea mal hecha (2 casos)
+exito: false
+Accuracy de detección de éxito
+Tabla 11: Resumen de Métricas (RAE 6.2)
+Métrica
+Valor ± dispersión
+N
+Experimento
+¿Confirma la hipótesis de la Fase 1?
+Accuracy semántica en D / en P
+1
+mIoU y Precision / Recall de detección
+2
+RMSE 3D con / sin registro (mm)
+3
+Latencia low / high (s)
+4
+Precision / Recall / F1 del rechazo de agarres inseguros
+5
+Accuracy de detección de éxito
+5
+EVIDENCIA: Incluya al menos tres imágenes anotadas: un acierto, un fallo semántico y una escena de agarre con el punto 3D y la pose de pre-agarre.
+5. Análisis, discusión y conclusiones
+5.1. Análisis de resultados
+Análisis 1 (Generalización, RAE 6.2): con la Tabla 6, ¿qué tan grande es la brecha D − P? ¿Es mayor que la variabilidad entre repeticiones? ¿En qué relación (seguridad, pertenencia, estado, contención) se sobreajustó más el prompt y por qué?
+Respuesta sustentada
+[Respuesta con valores y referencias a las tablas o figuras.] 
+Análisis 2 (Diseño, RAE 6.1): ¿qué variable no controlada pudo sesgar sus resultados (posición en la imagen, iluminación, orden de consultas, cuota de la API)? ¿Cómo la controlaría en un segundo ciclo y cuántas repeticiones harían falta según la dispersión observada?
+Respuesta sustentada
+[Respuesta con valores y referencias a las tablas o figuras.] 
+Análisis 3 (Geometría, RAE 1.2): con las Tablas 4 y 8, descomponga el error 3D en sus fuentes: señalamiento de Gemini (px), calibración, profundidad y registro. ¿Cuál domina? ¿Cuántos milímetros produce un error de 10 px a 0.6 m con su f_x? ¿Dónde importa más el registro, en el centro o en el borde?
+Respuesta sustentada
+[Respuesta con valores y referencias a las tablas o figuras.] 
+Análisis 4 (Incertidumbre, RAE 6.2): con la Tabla 7, ¿las cajas son estables entre repeticiones? ¿Qué implica la σ de las coordenadas para el punto de agarre y para la holgura de la pinza?
+Respuesta sustentada
+[Respuesta con valores y referencias a las tablas o figuras.] 
+Análisis 5 (Costo, RAE 6.2): con la Tabla 9, ¿vale la pena high para esta tarea? ¿Cuántas decisiones por minuto permite cada nivel, y por qué un VLM no puede cerrar un lazo de control de 1 kHz como ros2_control?
+Respuesta sustentada
+[Respuesta con valores y referencias a las tablas o figuras.] 
+Análisis 6 (Agarre, RAE 1.2 y 6.2): con la Tabla 10, ¿el Recall del rechazo es suficiente para confiar en el modelo cerca de personas? ¿Qué validaciones deterministas (volumen, profundidad válida, plan, pre-agarre) son imprescindibles entre la salida del VLM y un actuador real?
+Respuesta sustentada
+[Respuesta con valores y referencias a las tablas o figuras.] 
+5.2. Preguntas para la discusión
+Pregunta 1: la plantilla envía la imagen reducida a 1280 px y aun así ubica el punto en la imagen de 1920×1080. ¿Por qué no se pierde exactitud geométrica al convertir las coordenadas? ¿Qué sí se pierde al reducir la imagen?
+Respuesta sustentada
+[Respuesta argumentada.] 
+Pregunta 2: profundidad_robusta usa la mediana y no el promedio. Construya un ejemplo numérico de 9 píxeles con un reflejo en el que el promedio falle.
+Respuesta sustentada
+[Respuesta argumentada.] 
+Pregunta 3: ¿por qué la partición desarrollo/prueba es necesaria aunque el modelo no se "entrene"? Relacione su respuesta con el sobreajuste y la partición Train/Validation/Test del aprendizaje supervisado.
+Respuesta sustentada
+[Respuesta argumentada.] 
+Pregunta 4: la salida está en el marco óptico de la cámara. ¿Qué transformación falta para expresarla en base_link? ¿De qué depende que siga siendo correcta cuando el brazo se mueve? ¿Qué papel juega el C-space al planificar la trayectoria hacia p_pre?
+Respuesta sustentada
+[Respuesta argumentada.] 
+Pregunta 5 (ética): ¿qué información puede revelar una imagen enviada a un servicio externo aunque no aparezcan personas? ¿Qué alternativa técnica permitiría no enviar imágenes fuera del laboratorio?
+Respuesta sustentada
+[Respuesta argumentada.] 
+5.3. Conclusiones
+Conclusión
+Dato, tabla o figura que la sustenta
+1. [Conclusión]
+[Evidencia]
+2. [Conclusión]
+[Evidencia]
+3. [Conclusión]
+[Evidencia]
+4. [Conclusión]
+[Evidencia]
+6. Comprobación individual (E10)
+Cada integrante responde con sus propias palabras y con datos del grupo. Identifique cada respuesta con el código institucional.
+Integrante 1
+[código institucional — nombre]
+(a) RAE 1.2 — Explique cómo se convierte un punto [y, x] 0-1000 en un punto 3D y en una pose de pre-agarre. Use un punto real del grupo.
+[Respuesta individual]
+(b) RAE 6.1 — Explique por qué la ablación del registro reutiliza la misma respuesta de Gemini y qué controla la partición desarrollo/prueba.
+[Respuesta individual]
+(c) RAE 6.2 — Elija una métrica de la Tabla 11, interprete su valor y justifique una decisión de ingeniería.
+[Respuesta individual]
+Integrante 2
+[código institucional — nombre]
+(a) RAE 1.2 — Explique cómo se convierte un punto [y, x] 0-1000 en un punto 3D y en una pose de pre-agarre. Use un punto real del grupo.
+[Respuesta individual]
+(b) RAE 6.1 — Explique por qué la ablación del registro reutiliza la misma respuesta de Gemini y qué controla la partición desarrollo/prueba.
+[Respuesta individual]
+(c) RAE 6.2 — Elija una métrica de la Tabla 11, interprete su valor y justifique una decisión de ingeniería.
+[Respuesta individual]
+Integrante 3
+[código institucional — nombre]
+(a) RAE 1.2 — Explique cómo se convierte un punto [y, x] 0-1000 en un punto 3D y en una pose de pre-agarre. Use un punto real del grupo.
+[Respuesta individual]
+(b) RAE 6.1 — Explique por qué la ablación del registro reutiliza la misma respuesta de Gemini y qué controla la partición desarrollo/prueba.
+[Respuesta individual]
+(c) RAE 6.2 — Elija una métrica de la Tabla 11, interprete su valor y justifique una decisión de ingeniería.
+[Respuesta individual]
+7. Evaluación por RAE y criterio
+Marque una sola banda por criterio y registre un valor exacto entre 0 y 500 dentro del intervalo demostrado. NA se usa únicamente para una exclusión autorizada y no produce nota. El mínimo esperado es N3 (300–399 puntos).
+RAE
+Criterios que lo miden
+Peso en la actividad
+Evidencia principal
+RAE 1.2
+C1 y C2
+45 %
+E1–E4, E7 y E10
+RAE 6.1
+C3
+25 %
+E5, E6 y E10
+RAE 6.2
+C4
+30 %
+E7–E10
+C1. Representación estructurada y localización 3D — peso 25 %
+SO / indicador: SO1 — Resolución de problemas de ingeniería — RAE 1.2: Implementa estrategias de representación de información para resolver problemas de planeación de trayectorias y agarre (grasp) para robots manipuladores como el Kinova Gen3.
+Evidencia: E1, E2, E3 y E10  |  Unidad: producto de equipo con comprobación individual
+Marque
+Nivel
+Intervalo / valor guía
+Evidencia observable
+☐
+Excelente
+N5 — 475–500 / guía 500
+Además de N4, descompone el error de localización en señalamiento, calibración, profundidad y registro con estimaciones numéricas (p. ej. mm por 10 px a 0.6 m) y detecta automáticamente puntos sobre bordes o sin profundidad válida.
+☐
+Bueno
+N4 — 400–474 / guía 450
+Además de N3, el prompt propio exige una relación espacial explícita y supera a la versión ingenua en la escena burger; el pipeline maneja JSON inválido, listas vacías y puntos sin profundidad sin romperse.
+☐
+Aceptable
+N3 — 300–399 / guía 350
+Completa los TODO 2 a 4 (y 5 en la Ruta B) con pytest en 15 passed, usa prompts con salida JSON [y, x] 0-1000 válida, verifica la calibración con error ≤ 5 % y reporta X, Y, Z en metros en el marco óptico.
+☐
+Cumplimiento parcial
+N2 — 150–299 / guía 250
+Implementa parcialmente las funciones (pytest con fallas), interpreta mal el orden [y, x] o reporta puntos 3D sin una calibración verificada.
+☐
+No cumple
+N1 — 0–149 / guía 100
+No presenta una conversión funcional JSON 0-1000 → píxel → punto 3D, o los resultados no provienen del código del grupo.
+☐
+NA — No evaluado
+No produce valor
+Exclusión autorizada y documentada.
+Nivel marcado
+Valor exacto (0–500)
+Localizador u observación de la evidencia
+[N__ / NA]
+[___]
+[E__ / tabla / figura / archivo / respuesta individual]
+C2. Representación del espacio de trabajo y del agarre — peso 20 %
+SO / indicador: SO1 — Resolución de problemas de ingeniería — RAE 1.2: Implementa estrategias de representación de información para resolver problemas de planeación de trayectorias y agarre (grasp) para robots manipuladores como el Kinova Gen3.
+Evidencia: E4, E7 y E10  |  Unidad: producto de equipo con comprobación individual
+Marque
+Nivel
+Intervalo / valor guía
+Evidencia observable
+☐
+Excelente
+N5 — 475–500 / guía 500
+Además de N4, expresa el objetivo en base_link con la transformada requerida y verifica la alcanzabilidad planificando sin ejecutar en MoveIt 2 (use_fake_hardware) con el docente, o argumenta cuantitativamente la relación entre el espacio cartesiano y el C-space del Kinova Gen3.
+☐
+Bueno
+N4 — 400–474 / guía 450
+Además de N3, rechaza automáticamente objetivos fuera del volumen, sin profundidad o con plan inválido, y justifica la distancia de aproximación y la normal con la geometría de la pinza y de la escena.
+☐
+Aceptable
+N3 — 300–399 / guía 350
+Define el volumen de trabajo con límites medidos, valida cada objetivo 3D contra él, calcula la pose de pre-agarre a lo largo de la normal de la mesa y aplica las cuatro reglas de validación al plan.
+☐
+Cumplimiento parcial
+N2 — 150–299 / guía 250
+Reporta puntos de agarre o el plan sin validaciones, con un volumen de trabajo no medido o con una pose de pre-agarre incorrecta.
+☐
+No cumple
+N1 — 0–149 / guía 100
+No presenta una representación del espacio de trabajo ni del agarre; los puntos de Gemini se tratan como objetivos sin validar.
+☐
+NA — No evaluado
+No produce valor
+Exclusión autorizada y documentada.
+Nivel marcado
+Valor exacto (0–500)
+Localizador u observación de la evidencia
+[N__ / NA]
+[___]
+[E__ / tabla / figura / archivo / respuesta individual]
+C3. Diseño de la matriz de pruebas y control de variables — peso 25 %
+SO / indicador: SO6 — Experimentación y análisis de datos — RAE 6.1: Identifica y argumenta el diseño de experimentos para medir el desempeño de algoritmos de Inteligencia Artificial.
+Evidencia: E5, E6 y E10  |  Unidad: producto de equipo con comprobación individual
+Marque
+Nivel
+Intervalo / valor guía
+Evidencia observable
+☐
+Excelente
+N5 — 475–500 / guía 500
+Además de N4, justifica las repeticiones frente a la variabilidad observada, identifica sesgos o confusores (posición en la imagen, orden de consultas, cuota) y propone un diseño mejorado sustentado.
+☐
+Bueno
+N4 — 400–474 / guía 450
+Además de N3, controla explícitamente las variables no estudiadas (modelo, temperatura, resolución, pose, captura), aísla el efecto del registro reutilizando la misma respuesta de Gemini y no ajusta el prompt con escenas de prueba.
+☐
+Aceptable
+N3 — 300–399 / guía 350
+Presenta antes de consultar una matriz con factores, niveles, variables de respuesta y las repeticiones mínimas; pre-registra la verdad de terreno y separa escenas de desarrollo y de prueba.
+☐
+Cumplimiento parcial
+N2 — 150–299 / guía 250
+La matriz está incompleta o se elaboró después de los datos; faltan repeticiones, verdad de terreno o partición, o varias variables cambian a la vez.
+☐
+No cumple
+N1 — 0–149 / guía 100
+No hay un diseño experimental identificable: consultas aisladas sin protocolo, sin verdad de terreno ni repeticiones.
+☐
+NA — No evaluado
+No produce valor
+Exclusión autorizada y documentada.
+Nivel marcado
+Valor exacto (0–500)
+Localizador u observación de la evidencia
+[N__ / NA]
+[___]
+[E__ / tabla / figura / archivo / respuesta individual]
+C4. Métricas e inferencias sobre el desempeño — peso 30 %
+SO / indicador: SO6 — Experimentación y análisis de datos — RAE 6.2: Realiza inferencias sobre el desempeño de un algoritmo en la solución de un problema a partir del desarrollo de pruebas y aplicación de métricas apropiadas.
+Evidencia: E7, E8, E9 y E10  |  Unidad: producto de equipo con comprobación individual
+Marque
+Nivel
+Intervalo / valor guía
+Evidencia observable
+☐
+Excelente
+N5 — 475–500 / guía 500
+Además de N4, usa la dispersión o intervalos para decidir si las diferencias (D/P, low/high, con/sin registro, ingenuo/propio) son reales, delimita la validez de las conclusiones y argumenta el uso seguro del VLM en un robot.
+☐
+Bueno
+N4 — 400–474 / guía 450
+Además de N3, compara desarrollo y prueba (brecha de sobreajuste del prompt), cuantifica la incertidumbre de las cajas entre repeticiones, relaciona la latencia con decisiones por minuto y sustenta cada conclusión con una tabla o figura.
+☐
+Aceptable
+N3 — 300–399 / guía 350
+Calcula con un script reproducible desde resultados.csv y verdad_terreno.csv Accuracy, Precision/Recall/F1 del rechazo de agarres, RMSE 3D con y sin registro, IoU de cajas y latencia media ± σ, e interpreta cada métrica.
+☐
+Cumplimiento parcial
+N2 — 150–299 / guía 250
+Presenta métricas parciales, calculadas a mano o con errores de denominador o de unidades, o conclusiones sin respaldo en los datos.
+☐
+No cumple
+N1 — 0–149 / guía 100
+No presenta métricas válidas ni inferencias sobre el desempeño del modelo.
+☐
+NA — No evaluado
+No produce valor
+Exclusión autorizada y documentada.
+Nivel marcado
+Valor exacto (0–500)
+Localizador u observación de la evidencia
+[N__ / NA]
+[___]
+[E__ / tabla / figura / archivo / respuesta individual]
+8. Consolidado de la nota académica
+Aporte por criterio = valor exacto × peso / 100. El total queda en escala 0–500 y la nota académica se obtiene como total / 100.
+Criterio
+RAE
+Peso
+Nivel
+Valor exacto
+Aporte ponderado
+C1. Representación estructurada y localización 3D
+RAE 1.2
+25 %
+C2. Representación del espacio de trabajo y del agarre
+RAE 1.2
+20 %
+C3. Diseño de la matriz de pruebas y control de variables
+RAE 6.1
+25 %
+C4. Métricas e inferencias sobre el desempeño
+RAE 6.2
+30 %
+TOTAL
+100 %
+[___] / 500
+NOTA ACADÉMICA
+[___] / 5,0
+9. Consolidado separado por RAE
+Este consolidado conserva los resultados desagregados y no calcula un nivel ABET global. El RAE 1.2 combina C1 y C2 dentro de su propio peso; RAE 6.1 y RAE 6.2 se mantienen independientes.
+RAE
+Fórmula en escala 0–500
+Puntaje
+Nivel
+¿Alcanza N3?
+RAE 1.2
+(C1×25 + C2×20) / 45
+RAE 6.1
+C3
+RAE 6.2
+C4
+Bandas: N1 = 0–149; N2 = 150–299; N3 = 300–399; N4 = 400–474; N5 = 475–500. Umbral: N3.
+10. Registro para consolidación del curso
+Campo
+Registro
+STUDENT_ID
+[código institucional]
+ACTIVITY_CODE
+PO
+SOURCE_ID
+XLSX_IA_LAB_IA_01B_2026_2
+SCORE / SCALE_MAX
+[puntaje del instrumento] / 500
+STATUS
+[GRADED / ABSENT / PENDING / MISSING / EXCUSED]
+EVIDENCE_LOCATOR
+[entrega de Classroom / archivo / repositorio]
+OBSERVATION
+El libro CONSOLIDADOR_NOTAS_LAB_IA_01B_v1.0.xlsx replica estas fórmulas, genera el resultado por RAE y prepara la hoja Export_NotasActividad para integrarla al libro mayor del curso.
+11. Declaración de uso de herramientas de IA generativa
+Herramienta
+Uso declarado
+Cómo se verificó el resultado
+[p. ej. asistente de código]
+[código, redacción, depuración…]
+[prueba o revisión aplicada]
+Gemini Robotics-ER 2
+Objeto de estudio de la práctica
+Tablas 6 a 11
+12. Control y cierre de la entrega
+Requisito
+Cumple (sí / no)
+Observación o localizador
+No hay claves de API en el repositorio ni en los anexos
+No hay imágenes con personas, rostros o datos identificables
+Los roles de los integrantes están declarados
+Las tablas fueron regeneradas por el script de métricas
+Se adjuntaron CSV, script/notebook, imágenes y repositorio/SHA
+Campo de cierre
+Registro
+Persona que entrega
+[código — nombre]
+Fecha
+[AAAA-MM-DD]
+Versión
+v1.0
+Observaciones
+Confirmamos que el informe corresponde al trabajo del grupo, que los datos provienen de las ejecuciones registradas y que la verdad de terreno se definió antes de consultar el modelo.

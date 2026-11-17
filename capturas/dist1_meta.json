@@ -1,0 +1,14 @@
+{
+  "escena": "dist1",
+  "nota": "Objeto centro",
+  "fecha": "2026-11-12T15:58:05.320203",
+  "color_res": [
+    1920,
+    1080
+  ],
+  "depth_res": [
+    480,
+    270
+  ],
+  "pct_profundidad_valida": 71.15
+}

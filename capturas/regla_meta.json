@@ -1,0 +1,14 @@
+{
+  "escena": "regla",
+  "nota": "Hoja A4 calibracion focal",
+  "fecha": "2026-11-12T15:24:29.852587",
+  "color_res": [
+    1920,
+    1080
+  ],
+  "depth_res": [
+    480,
+    270
+  ],
+  "pct_profundidad_valida": 73.49
+}

@@ -1,0 +1,23 @@
+escena,particion,relacion,objeto_esperado,u_min,v_min,u_max,v_max,segura,d_real_m,nota
+regla,-,calibracion,hoja A4,710,435,1210,645,si,0.297,hoja A4 horizontal 0.297m
+semantica1,D,seguridad,caja libre,812,430,1120,700,si,,D: termo sobre una de las cajas
+semantica1p,P,seguridad,caja libre,300,380,610,650,si,,P: bandeja como distractor
+semantica2,D,pertenencia,celular junto a llaves,700,420,880,660,si,,D: llaves junto al celular derecho
+semantica2p,P,pertenencia,celular junto a llaves,400,420,580,660,si,,P: llaves junto al celular izquierdo
+semantica3,D,estado,cuaderno abierto,380,350,780,650,si,,D: cuaderno abierto a la izquierda
+semantica3p,P,estado,cuaderno abierto,850,350,1250,650,si,,P: cuaderno abierto a la derecha
+semantica4,D,contencion,esfero dentro de estuche,500,380,820,500,si,,D: esfero dentro de estuche
+semantica4p,P,contencion,esfero dentro de estuche,500,380,820,500,si,,P: estuche cerrado o semiabierto
+burger,D,relacional,caja hamburguesa,800,450,1100,750,si,,D: cajas y bandeja del carrito
+burgerp,P,relacional,caja hamburguesa,800,450,1100,750,si,,P: configuracion alterna
+dist1,-,distancia,tapa termo|tapa caja,,,,,,0.312,cinta: centro a centro
+dist2,-,distancia,tapa termo|tapa caja,,,,,,0.250,configuracion 2
+dist3,-,distancia,tapa termo|tapa caja,,,,,,0.380,configuracion 3
+dist4,-,distancia,tapa termo|tapa caja,,,,,,0.220,cerca del borde
+dist5,-,distancia,tapa termo|tapa caja,,,,,,0.340,cerca del borde
+agarre_s1,-,agarre_seguro,caja libre,810,430,1120,700,si,,caja despejada y estable
+agarre_s2,-,agarre_seguro,caja libre,810,430,1120,700,si,,termo vertical y despejado
+agarre_s3,-,agarre_seguro,caja libre,810,430,1120,700,si,,celular plano sobre la mesa
+agarre_i1,-,agarre_inseguro,caja con objeto encima,810,430,1120,700,no,,inseguro: objeto encima
+agarre_i2,-,agarre_inseguro,caja con mano cerca,810,430,1120,700,no,,inseguro: mano humana cerca
+agarre_i3,-,agarre_inseguro,objeto volcado o inclinado,600,400,750,700,no,,inseguro: inestable/volcado

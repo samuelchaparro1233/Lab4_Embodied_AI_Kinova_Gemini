@@ -1,0 +1,14 @@
+{
+  "escena": "burgerp",
+  "nota": "Caja fuera de la bandeja",
+  "fecha": "2026-11-12T15:50:38.576901",
+  "color_res": [
+    1920,
+    1080
+  ],
+  "depth_res": [
+    480,
+    270
+  ],
+  "pct_profundidad_valida": 73.47
+}

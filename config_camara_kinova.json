@@ -1,0 +1,78 @@
+{
+  "color": {
+    "sensor": "Omnivision OV5640",
+    "width": 1920,
+    "height": 1080,
+    "intrinsics": {
+      "fx": 1362.9,
+      "fy": 1362.9,
+      "cx": 960.0,
+      "cy": 540.0
+    },
+    "distortion_model": "plumb_bob",
+    "distortion_coefficients": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "depth": {
+    "sensor": "Intel RealSense D410",
+    "width": 480,
+    "height": 270,
+    "intrinsics": {
+      "fx": 380.0,
+      "fy": 380.0,
+      "cx": 240.0,
+      "cy": 135.0
+    },
+    "depth_scale_mm_per_unit": 1.0,
+    "distortion_model": "plumb_bob",
+    "distortion_coefficients": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "extrinsics_depth_to_color": {
+    "rotation_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "translation_mm": [
+      -19.5,
+      -5.0,
+      0.0
+    ],
+    "translation_m": [
+      -0.0195,
+      -0.005,
+      0.0
+    ]
+  },
+  "workspace_limits_optical_frame": {
+    "x_min": -0.4,
+    "x_max": 0.4,
+    "y_min": -0.3,
+    "y_max": 0.3,
+    "z_mesa": 0.85,
+    "h_max": 0.35
+  }
+}

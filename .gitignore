@@ -1,0 +1,28 @@
+# API Keys y credenciales
+.env
+api_key.txt
+*.key
+*.token
+
+# Python y entornos virtuales
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+ENV/
+
+# ROS 2 build artifacts
+build/
+install/
+log/
+
+# Archivos temporales de Office y sistema
+~$*.docx
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Archivos comprimidos pesados
+*.zip
+

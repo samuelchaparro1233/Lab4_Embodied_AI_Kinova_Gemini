@@ -1,0 +1,14 @@
+{
+  "escena": "dist5",
+  "nota": "Objeto borde derecho",
+  "fecha": "2026-11-12T16:07:59.203033",
+  "color_res": [
+    1920,
+    1080
+  ],
+  "depth_res": [
+    480,
+    270
+  ],
+  "pct_profundidad_valida": 69.02
+}

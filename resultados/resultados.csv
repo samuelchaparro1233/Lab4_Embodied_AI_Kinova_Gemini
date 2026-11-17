@@ -1,0 +1,154 @@
+timestamp,grupo,escena,tarea,objeto,thinking,sin_registro,modelo,latencia_s,tokens_pensamiento,tokens_totales,respuesta_raw,u,v,X_m,Y_m,Z_m,distancia_3d_m,dentro_volumen,nota
+2026-11-16T10:17:38.116811,G03,semantica1,propio,"la caja de hamburguesa libre y segura para tomar desde arriba",low,False,gemini-robotics-er-2-preview,7.027,0,1276,"```json
+[{'point': [609, 686], 'label': 'la caja de hamburguesa libre y segura para tomar desde arriba'}]
+```",1316,657,0.2683,0.0882,1.0270,,False,"la caja de hamburguesa libre y segura para tomar desde arriba"
+2026-11-16T10:17:46.010266,G03,semantica1,propio,"la caja de hamburguesa libre y segura para tomar desde arriba",low,False,gemini-robotics-er-2-preview,7.37,0,1279,"```json
+[
+  {'point': [611, 686], 'label': 'la caja de hamburguesa libre y segura para tomar desde arriba'}
+]
+```",1316,659,0.2681,0.0896,1.0265,,False,"la caja de hamburguesa libre y segura para tomar desde arriba"
+2026-11-16T10:17:49.606892,G03,semantica1,propio,"la caja de hamburguesa libre y segura para tomar desde arriba",low,False,gemini-robotics-er-2-preview,3.111,0,1276,"```json
+[{'point': [611, 686], 'label': 'la caja de hamburguesa libre y segura para tomar desde arriba'}]
+```",1316,659,0.2681,0.0896,1.0265,,False,"la caja de hamburguesa libre y segura para tomar desde arriba"
+2026-11-16T10:17:53.886343,G03,semantica1p,propio,"la caja de hamburguesa libre y segura para tomar desde arriba",low,False,gemini-robotics-er-2-preview,3.787,0,1279,"```json
+[
+  {'point': [619, 410], 'label': 'la caja de hamburguesa libre y segura para tomar desde arriba'}
+]
+```",787,668,,,,,,"la caja de hamburguesa libre y segura para tomar desde arriba"
+2026-11-16T10:17:57.465286,G03,semantica1p,propio,"la caja de hamburguesa libre y segura para tomar desde arriba",low,False,gemini-robotics-er-2-preview,3.051,0,1279,"```json
+[
+  {'point': [619, 412], 'label': 'la caja de hamburguesa libre y segura para tomar desde arriba'}
+]
+```",791,668,,,,,,"la caja de hamburguesa libre y segura para tomar desde arriba"
+2026-11-16T10:18:01.359709,G03,semantica1p,propio,"la caja de hamburguesa libre y segura para tomar desde arriba",low,False,gemini-robotics-er-2-preview,3.423,0,1279,"```json
+[
+  {'point': [617, 412], 'label': 'la caja de hamburguesa libre y segura para tomar desde arriba'}
+]
+```",791,666,,,,,,"la caja de hamburguesa libre y segura para tomar desde arriba"
+2026-11-16T10:18:06.167189,G03,semantica2,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",low,False,error_fallback,4.275,0,0,"[{'point': [524, 503], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]",965,565,0.0041,0.0205,1.1160,,False,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:18:10.771778,G03,semantica2,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",low,False,gemini-robotics-er-2-preview,3.975,0,1282,"```json
+[{'point': [611, 396], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]
+```",760,659,-0.1690,0.1005,1.1515,,False,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:18:15.086281,G03,semantica2,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",low,False,gemini-robotics-er-2-preview,3.793,0,1282,"```json
+[{'point': [611, 396], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]
+```",760,659,-0.1690,0.1005,1.1515,,False,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:18:19.466102,G03,semantica2p,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",low,False,gemini-robotics-er-2-preview,3.865,0,1282,"```json
+[{'point': [665, 381], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]
+```",731,718,,,,,,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:18:23.575880,G03,semantica2p,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",low,False,gemini-robotics-er-2-preview,3.59,0,1282,"```json
+[{'point': [665, 381], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]
+```",731,718,,,,,,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:18:27.364327,G03,semantica2p,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",low,False,gemini-robotics-er-2-preview,3.3,0,1282,"```json
+[{'point': [665, 381], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]
+```",731,718,,,,,,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:18:32.365736,G03,semantica3,propio,"el cuaderno que está abierto y listo para tomar apuntes",low,False,error_fallback,4.319,0,0,"[{'point': [524, 503], 'label': 'el cuaderno que está abierto y listo para tomar apuntes'}]",965,565,0.0039,0.0196,1.0690,,False,"el cuaderno que está abierto y listo para tomar apuntes"
+2026-11-16T10:18:37.197151,G03,semantica3,propio,"el cuaderno que está abierto y listo para tomar apuntes",low,False,error_fallback,4.097,0,0,"[{'point': [524, 503], 'label': 'el cuaderno que está abierto y listo para tomar apuntes'}]",965,565,0.0039,0.0196,1.0690,,False,"el cuaderno que está abierto y listo para tomar apuntes"
+2026-11-16T10:18:42.289869,G03,semantica3,propio,"el cuaderno que está abierto y listo para tomar apuntes",low,False,gemini-robotics-er-2-preview,4.2,0,1276,"```json
+[
+  {'point': [447, 396], 'label': 'el cuaderno que está abierto y listo para tomar apuntes'}
+]
+```",760,482,-0.1771,-0.0514,1.2070,,False,"el cuaderno que está abierto y listo para tomar apuntes"
+2026-11-16T10:18:47.374350,G03,semantica3p,propio,"el cuaderno que está abierto y listo para tomar apuntes",low,False,gemini-robotics-er-2-preview,4.306,0,1276,"```json
+[
+  {'point': [447, 569], 'label': 'el cuaderno que está abierto y listo para tomar apuntes'}
+]
+```",1092,482,0.1076,-0.0473,1.1110,,False,"el cuaderno que está abierto y listo para tomar apuntes"
+2026-11-16T10:18:51.662952,G03,semantica3p,propio,"el cuaderno que está abierto y listo para tomar apuntes",low,False,gemini-robotics-er-2-preview,3.577,0,1276,"```json
+[
+  {'point': [447, 569], 'label': 'el cuaderno que está abierto y listo para tomar apuntes'}
+]
+```",1092,482,0.1076,-0.0473,1.1110,,False,"el cuaderno que está abierto y listo para tomar apuntes"
+2026-11-16T10:18:56.449489,G03,semantica3p,propio,"el cuaderno que está abierto y listo para tomar apuntes",low,False,gemini-robotics-er-2-preview,3.902,0,1276,"```json
+[
+  {'point': [454, 570], 'label': 'el cuaderno que está abierto y listo para tomar apuntes'}
+]
+```",1094,490,0.1087,-0.0406,1.1060,,False,"el cuaderno que está abierto y listo para tomar apuntes"
+2026-11-16T10:19:03.075525,G03,semantica4,propio,"el esfero que está dentro del estuche",low,False,gemini-robotics-er-2-preview,5.806,0,1270,"```json
+[{'point': [421, 413], 'label': 'el esfero que está dentro del estuche'}]
+```",793,454,-0.1524,-0.0785,1.2435,,False,"el esfero que está dentro del estuche"
+2026-11-16T10:19:07.266157,G03,semantica4,propio,"el esfero que está dentro del estuche",low,False,gemini-robotics-er-2-preview,3.531,0,1270,"```json
+[{'point': [421, 413], 'label': 'el esfero que está dentro del estuche'}]
+```",793,454,-0.1524,-0.0785,1.2435,,False,"el esfero que está dentro del estuche"
+2026-11-16T10:19:14.104142,G03,semantica4,propio,"el esfero que está dentro del estuche",low,False,gemini-robotics-er-2-preview,5.38,0,1270,"```json
+[{'point': [421, 412], 'label': 'el esfero que está dentro del estuche'}]
+```",791,454,-0.1539,-0.0783,1.2410,,False,"el esfero que está dentro del estuche"
+2026-11-16T10:19:22.862258,G03,semantica4p,propio,"el esfero que está dentro del estuche",low,False,gemini-robotics-er-2-preview,6.941,0,1270,"```json
+[{'point': [483, 375], 'label': 'el esfero que está dentro del estuche'}]
+```",720,521,-0.2131,-0.0169,1.2100,,False,"el esfero que está dentro del estuche"
+2026-11-16T10:19:32.509729,G03,semantica4p,propio,"el esfero que está dentro del estuche",low,False,gemini-robotics-er-2-preview,8.183,0,1270,"```json
+[{'point': [483, 373], 'label': 'el esfero que está dentro del estuche'}]
+```",716,521,-0.2166,-0.0169,1.2100,,False,"el esfero que está dentro del estuche"
+2026-11-16T10:19:40.484309,G03,semantica4p,propio,"el esfero que está dentro del estuche",low,False,error_fallback,6.373,0,0,"[{'point': [524, 503], 'label': 'el esfero que está dentro del estuche'}]",965,565,0.0042,0.0210,1.1425,,False,"el esfero que está dentro del estuche"
+2026-11-16T10:19:48.758600,G03,burger,propio,"la caja de hamburguesa libre",low,False,error_fallback,6.645,0,0,"[{'point': [524, 503], 'label': 'la caja de hamburguesa libre'}]",965,565,0.0042,0.0208,1.1315,,False,"la caja de hamburguesa libre"
+2026-11-16T10:19:56.880415,G03,burger,propio,"la caja de hamburguesa libre",low,False,gemini-robotics-er-2-preview,6.609,0,1261,"```json
+[
+  {'point': [390, 552], 'label': 'la caja de hamburguesa libre'}
+]
+```",1059,421,0.0837,-0.1006,1.1520,,False,"la caja de hamburguesa libre"
+2026-11-16T10:20:05.355548,G03,burger,propio,"la caja de hamburguesa libre",low,False,error_fallback,7.037,0,0,"[{'point': [524, 503], 'label': 'la caja de hamburguesa libre'}]",965,565,0.0042,0.0208,1.1315,,False,"la caja de hamburguesa libre"
+2026-11-16T10:20:13.758451,G03,burger,ingenuo,"la caja",low,False,error_fallback,6.882,0,0,"[{'point': [524, 503], 'label': 'la caja'}]",965,565,0.0042,0.0208,1.1315,,False,"la caja"
+2026-11-16T10:20:21.242059,G03,burger,ingenuo,"la caja",low,False,error_fallback,5.927,0,0,"[{'point': [524, 503], 'label': 'la caja'}]",965,565,0.0042,0.0208,1.1315,,False,"la caja"
+2026-11-16T10:20:31.385880,G03,burger,ingenuo,"la caja",low,False,gemini-robotics-er-2-preview,8.686,0,1159,"```json
+[{'point': [390, 545], 'label': 'la caja'}]
+```",1046,421,0.0729,-0.1009,1.1555,,False,"la caja"
+2026-11-16T10:20:38.654203,G03,semantica1,cajas,"",low,False,error_fallback,5.765,0,0,"[{'point': [524, 503], 'label': ''}]",965,565,0.0039,0.0196,1.0710,,False,""
+2026-11-16T10:20:46.152974,G03,semantica1,cajas,"",low,False,error_fallback,6.055,0,0,"[{'point': [524, 503], 'label': ''}]",965,565,0.0039,0.0196,1.0710,,False,""
+2026-11-16T10:20:53.187271,G03,semantica1,cajas,"",low,False,error_fallback,5.65,0,0,"[{'point': [524, 503], 'label': ''}]",965,565,0.0039,0.0196,1.0710,,False,""
+2026-11-16T10:21:02.598246,G03,semantica1,cajas,"",low,False,gemini-robotics-er-2-preview,7.954,0,1282,"```json
+[
+  {'box_2d': [110, 281, 691, 462], 'label': 'objeto manipulable'},
+  {'box_2d': [469, 307, 783, 511], 'label': 'recipiente'},
+  {'box_2d': [418, 545, 804, 826], 'label': 'objeto manipulable'}
+]
+```",,,,,,,,""
+2026-11-16T10:21:09.793019,G03,semantica1,cajas,"",low,False,error_fallback,5.709,0,0,"[{'point': [524, 503], 'label': ''}]",965,565,0.0039,0.0196,1.0710,,False,""
+2026-11-16T10:21:17.880542,G03,burger,cajas,"",low,False,error_fallback,6.519,0,0,"[{'point': [524, 503], 'label': ''}]",965,565,0.0042,0.0208,1.1315,,False,""
+2026-11-16T10:21:25.931533,G03,burger,cajas,"",low,False,error_fallback,6.537,0,0,"[{'point': [524, 503], 'label': ''}]",965,565,0.0042,0.0208,1.1315,,False,""
+2026-11-16T10:21:36.268365,G03,burger,cajas,"",low,False,gemini-robotics-er-2-preview,8.849,0,1246,"```json
+[
+  {'box_2d': [234, 428, 555, 678], 'label': 'objeto manipulable'},
+  {'box_2d': [233, 355, 752, 781], 'label': 'recipiente'}
+]
+```",,,,,,,,""
+2026-11-16T10:21:43.969004,G03,burger,cajas,"",low,False,error_fallback,6.246,0,0,"[{'point': [524, 503], 'label': ''}]",965,565,0.0042,0.0208,1.1315,,False,""
+2026-11-16T10:21:50.840381,G03,burger,cajas,"",low,False,error_fallback,5.554,0,0,"[{'point': [524, 503], 'label': ''}]",965,565,0.0042,0.0208,1.1315,,False,""
+2026-11-16T10:21:52.206452,G03,dist1,puntos,"el termo y la caja",low,False,manual,0.0,0,0,"[{'point': [500, 312], 'label': 'termo'}, {'point': [500, 586], 'label': 'caja'}]",599,540,-0.3205,0.0000,1.2100,0.4690,False,"el termo y la caja"
+2026-11-16T10:21:53.203553,G03,dist1,puntos,"el termo y la caja",low,False,manual,0.0,0,0,"[{'point': [500, 312], 'label': 'termo'}, {'point': [500, 586], 'label': 'caja'}]",599,540,-0.3205,0.0000,1.2100,0.4690,False,"el termo y la caja"
+2026-11-16T10:21:54.169232,G03,dist1,puntos,"el termo y la caja",low,True,manual,0.0,0,0,"[{'point': [500, 312], 'label': 'termo'}, {'point': [500, 586], 'label': 'caja'}]",599,540,-0.3165,0.0000,1.1950,0.4593,False,"el termo y la caja"
+2026-11-16T10:21:55.122775,G03,dist1,puntos,"el termo y la caja",low,True,manual,0.0,0,0,"[{'point': [500, 312], 'label': 'termo'}, {'point': [500, 586], 'label': 'caja'}]",599,540,-0.3165,0.0000,1.1950,0.4593,False,"el termo y la caja"
+2026-11-16T10:21:56.004051,G03,dist2,puntos,"el termo y la caja",low,False,manual,0.0,0,0,"[{'point': [500, 312], 'label': 'termo'}, {'point': [500, 532], 'label': 'caja'}]",599,540,-0.2119,0.0000,0.8000,0.2477,True,"el termo y la caja"
+2026-11-16T10:21:56.817338,G03,dist2,puntos,"el termo y la caja",low,False,manual,0.0,0,0,"[{'point': [500, 312], 'label': 'termo'}, {'point': [500, 532], 'label': 'caja'}]",599,540,-0.2119,0.0000,0.8000,0.2477,True,"el termo y la caja"
+2026-11-16T10:21:57.625806,G03,dist2,puntos,"el termo y la caja",low,True,manual,0.0,0,0,"[{'point': [500, 312], 'label': 'termo'}, {'point': [500, 532], 'label': 'caja'}]",599,540,-0.2119,0.0000,0.8000,0.2477,True,"el termo y la caja"
+2026-11-16T10:21:58.433661,G03,dist2,puntos,"el termo y la caja",low,True,manual,0.0,0,0,"[{'point': [500, 312], 'label': 'termo'}, {'point': [500, 532], 'label': 'caja'}]",599,540,-0.2119,0.0000,0.8000,0.2477,True,"el termo y la caja"
+2026-11-16T10:21:59.432286,G03,dist3,puntos,"el termo y la caja",low,False,manual,0.0,0,0,"[{'point': [500, 312], 'label': 'termo'}, {'point': [500, 646], 'label': 'caja'}]",599,540,0.2529,0.0000,1.2310,,False,"el termo y la caja"
+2026-11-16T10:22:00.392565,G03,dist3,puntos,"el termo y la caja",low,False,manual,0.0,0,0,"[{'point': [500, 312], 'label': 'termo'}, {'point': [500, 646], 'label': 'caja'}]",599,540,0.2529,0.0000,1.2310,,False,"el termo y la caja"
+2026-11-16T10:22:01.391425,G03,dist3,puntos,"el termo y la caja",low,True,manual,0.0,0,0,"[{'point': [500, 312], 'label': 'termo'}, {'point': [500, 646], 'label': 'caja'}]",599,540,-0.3067,0.0000,1.1580,0.5409,False,"el termo y la caja"
+2026-11-16T10:22:02.349633,G03,dist3,puntos,"el termo y la caja",low,True,manual,0.0,0,0,"[{'point': [500, 312], 'label': 'termo'}, {'point': [500, 646], 'label': 'caja'}]",599,540,-0.3067,0.0000,1.1580,0.5409,False,"el termo y la caja"
+2026-11-16T10:22:03.353122,G03,dist4,puntos,"el termo y la caja",low,False,manual,0.0,0,0,"[{'point': [500, 104], 'label': 'termo'}, {'point': [500, 297], 'label': 'caja'}]",200,540,-0.7522,0.0000,1.3490,0.4562,False,"el termo y la caja"
+2026-11-16T10:22:04.336993,G03,dist4,puntos,"el termo y la caja",low,False,manual,0.0,0,0,"[{'point': [500, 104], 'label': 'termo'}, {'point': [500, 297], 'label': 'caja'}]",200,540,-0.7522,0.0000,1.3490,0.4562,False,"el termo y la caja"
+2026-11-16T10:22:05.362005,G03,dist4,puntos,"el termo y la caja",low,True,manual,0.0,0,0,"[{'point': [500, 104], 'label': 'termo'}, {'point': [500, 297], 'label': 'caja'}]",200,540,-0.7422,0.0000,1.3310,0.4413,False,"el termo y la caja"
+2026-11-16T10:22:06.354720,G03,dist4,puntos,"el termo y la caja",low,True,manual,0.0,0,0,"[{'point': [500, 104], 'label': 'termo'}, {'point': [500, 297], 'label': 'caja'}]",200,540,-0.7422,0.0000,1.3310,0.4413,False,"el termo y la caja"
+2026-11-16T10:22:07.378613,G03,dist5,puntos,"el termo y la caja",low,False,manual,0.0,0,0,"[{'point': [500, 104], 'label': 'termo'}, {'point': [500, 403], 'label': 'caja'}]",200,540,-0.8894,0.0000,1.5950,0.8278,False,"el termo y la caja"
+2026-11-16T10:22:08.378086,G03,dist5,puntos,"el termo y la caja",low,False,manual,0.0,0,0,"[{'point': [500, 104], 'label': 'termo'}, {'point': [500, 403], 'label': 'caja'}]",200,540,-0.8894,0.0000,1.5950,0.8278,False,"el termo y la caja"
+2026-11-16T10:22:09.403943,G03,dist5,puntos,"el termo y la caja",low,True,manual,0.0,0,0,"[{'point': [500, 104], 'label': 'termo'}, {'point': [500, 403], 'label': 'caja'}]",200,540,-0.7355,0.0000,1.3190,0.5825,False,"el termo y la caja"
+2026-11-16T10:22:10.380280,G03,dist5,puntos,"el termo y la caja",low,True,manual,0.0,0,0,"[{'point': [500, 104], 'label': 'termo'}, {'point': [500, 403], 'label': 'caja'}]",200,540,-0.7355,0.0000,1.3190,0.5825,False,"el termo y la caja"
+2026-11-16T10:22:17.129616,G03,semantica2p,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",low,False,gemini-robotics-er-2-preview,5.682,0,1282,"```json
+[{'point': [665, 381], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]
+```",731,718,,,,,,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:22:25.144834,G03,semantica2p,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",low,False,error_fallback,6.626,0,0,"[{'point': [524, 503], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]",965,565,0.0041,0.0204,1.1140,,False,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:22:32.307788,G03,semantica2p,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",low,False,error_fallback,5.754,0,0,"[{'point': [524, 503], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]",965,565,0.0041,0.0204,1.1140,,False,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:22:40.358475,G03,semantica2p,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",low,False,error_fallback,6.62,0,0,"[{'point': [524, 503], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]",965,565,0.0041,0.0204,1.1140,,False,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:22:47.751735,G03,semantica2p,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",low,False,error_fallback,5.913,0,0,"[{'point': [524, 503], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]",965,565,0.0041,0.0204,1.1140,,False,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:22:55.473708,G03,semantica2p,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",high,False,error_fallback,6.206,0,0,"[{'point': [524, 503], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]",965,565,0.0041,0.0204,1.1140,,False,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:23:05.088847,G03,semantica2p,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",high,False,gemini-robotics-er-2-preview,8.107,0,1845,"```json
+[{'point': [665, 380], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]
+```",729,718,,,,,,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:23:12.043015,G03,semantica2p,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",high,False,error_fallback,5.473,0,0,"[{'point': [524, 503], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]",965,565,0.0041,0.0204,1.1140,,False,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:23:19.652012,G03,semantica2p,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",high,False,error_fallback,6.134,0,0,"[{'point': [524, 503], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]",965,565,0.0041,0.0204,1.1140,,False,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:23:26.769350,G03,semantica2p,propio,"el celular que pertenece a la persona que dejó sus llaves al lado",high,False,error_fallback,5.789,0,0,"[{'point': [524, 503], 'label': 'el celular que pertenece a la persona que dejó sus llaves al lado'}]",965,565,0.0041,0.0204,1.1140,,False,"el celular que pertenece a la persona que dejó sus llaves al lado"
+2026-11-16T10:23:29.848758,G03,agarre_s1,agarre,"la caja de hamburguesa",low,False,error_fallback,2.46,0,0,"[{'point': [524, 503], 'label': 'la caja de hamburguesa'}]",965,565,0.0029,0.0147,0.8000,,True,"la caja de hamburguesa"
+2026-11-16T10:23:32.597251,G03,agarre_s2,agarre,"la caja de hamburguesa",low,False,error_fallback,2.191,0,0,"[{'point': [524, 503], 'label': 'la caja de hamburguesa'}]",965,565,0.0029,0.0147,0.8000,,True,"la caja de hamburguesa"
+2026-11-16T10:23:35.479763,G03,agarre_s3,agarre,"la caja de hamburguesa",low,False,error_fallback,2.277,0,0,"[{'point': [524, 503], 'label': 'la caja de hamburguesa'}]",965,565,0.0029,0.0147,0.8000,,True,"la caja de hamburguesa"
+2026-11-16T10:23:38.091866,G03,agarre_i1,agarre,"la caja de hamburguesa",low,False,error_fallback,2.07,0,0,"[{'point': [524, 503], 'label': 'la caja de hamburguesa'}]",965,565,0.0029,0.0147,0.8000,,True,"la caja de hamburguesa"
+2026-11-16T10:23:40.894595,G03,agarre_i2,agarre,"la caja de hamburguesa",low,False,error_fallback,2.206,0,0,"[{'point': [524, 503], 'label': 'la caja de hamburguesa'}]",965,565,0.0029,0.0147,0.8000,,True,"la caja de hamburguesa"
+2026-11-16T10:23:43.134763,G03,agarre_i3,agarre,"la caja de hamburguesa",low,False,error_fallback,1.763,0,0,"[{'point': [524, 503], 'label': 'la caja de hamburguesa'}]",965,565,0.0029,0.0147,0.8000,,True,"la caja de hamburguesa"
